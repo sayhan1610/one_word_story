@@ -4,55 +4,77 @@
         "apple", "banana", "city", "country", "school", "teacher", "student", "doctor", "nurse", "hospital",
         "river", "mountain", "forest", "beach", "lake", "train", "plane", "boat", "ship", "building",
         "street", "road", "bicycle", "motorcycle", "bus", "park", "garden", "flower", "plant", "animal",
-        "bird", "fish", "insect", "store", "shop", "restaurant", "cafe", "market", "mall", "stadium"
+        "bird", "fish", "insect", "store", "shop", "restaurant", "cafe", "market", "mall", "stadium",
+        "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ian", "Jack",
+        "Katherine", "Liam", "Mia", "Noah", "Olivia", "Paul", "Quinn", "Rachel", "Sam", "Tina",
+        "Ursula", "Victor", "Wendy", "Xander", "Yara", "Zach", "sun", "moon", "star", "planet", "cloud",
+        "wind", "rain", "snow", "storm", "desert", "valley", "canyon", "island", "peninsula", "bridge",
+        "statue", "museum", "gallery", "theater", "concert", "playground", "zoo", "aquarium", "circus", "fair",
+        "campground", "forest", "waterfall", "volcano", "cave", "tunnel", "skyscraper", "library", "hotel", "mansion"
     ],
     "verb": [
         "run", "jump", "swim", "drive", "fly", "walk", "talk", "sing", "dance", "eat",
         "drink", "read", "write", "listen", "watch", "play", "work", "study", "sleep", "wake",
         "cook", "clean", "wash", "paint", "draw", "build", "fix", "break", "cut", "grow",
         "throw", "catch", "hold", "buy", "sell", "teach", "learn", "give", "take", "send",
-        "receive", "open", "close", "start", "stop", "win", "lose", "find", "make", "use"
+        "receive", "open", "close", "start", "stop", "win", "lose", "find", "make", "use",
+        "shout", "whisper", "beg", "command", "explore", "travel", "discover", "invent", "design", "prepare",
+        "celebrate", "practice", "assist", "rescue", "organize", "distribute", "transport", "negotiate", "question", "reply"
     ],
     "adjective": [
         "happy", "blue", "tall", "short", "bright", "dark", "hot", "cold", "warm", "cool",
         "fast", "slow", "young", "old", "new", "big", "small", "large", "tiny", "long",
         "short", "high", "low", "soft", "hard", "light", "heavy", "strong", "weak", "rich",
         "poor", "clean", "dirty", "noisy", "quiet", "pretty", "ugly", "beautiful", "handsome", "smart",
-        "dumb", "quick", "lazy", "brave", "shy", "polite", "rude", "friendly", "mean", "funny"
+        "dumb", "quick", "lazy", "brave", "shy", "polite", "rude", "friendly", "mean", "funny",
+        "vivid", "dull", "rough", "smooth", "warm", "fuzzy", "spiky", "slippery", "bumpy", "hardworking",
+        "gloomy", "cheerful", "elegant", "messy", "plain", "colorful", "vintage", "modern", "classic", "creative"
     ],
     "adverb": [
         "quickly", "slowly", "silently", "loudly", "eagerly", "happily", "sadly", "angrily", "gently", "roughly",
         "carefully", "carelessly", "easily", "hardly", "barely", "nearly", "always", "never", "sometimes", "often",
         "rarely", "frequently", "occasionally", "regularly", "daily", "weekly", "monthly", "yearly", "yesterday", "today",
         "tomorrow", "tonight", "early", "late", "soon", "eventually", "gradually", "suddenly", "surprisingly", "thankfully",
-        "fortunately", "unfortunately", "accidentally", "purposely", "politely", "rudely", "funnily", "seriously", "truthfully", "deceivingly"
+        "fortunately", "unfortunately", "accidentally", "purposely", "politely", "rudely", "funnily", "seriously", "truthfully", "deceivingly",
+        "naturally", "artificially", "randomly", "deliberately", "freely", "formally", "informally", "sharply", "smoothly", "abruptly"
     ],
     "preposition": [
         "in", "on", "at", "by", "with", "about", "against", "among", "around", "before",
         "after", "behind", "below", "beside", "between", "beyond", "during", "except", "for", "from",
         "inside", "into", "near", "of", "off", "out", "over", "through", "to", "under",
         "until", "up", "upon", "within", "without", "above", "along", "beneath", "despite", "underneath",
-        "next", "outside", "past", "towards", "unlike", "via", "amid", "concerning", "regarding", "considering"
+        "next", "outside", "past", "towards", "unlike", "via", "amid", "concerning", "regarding", "considering",
+        "amongst", "around", "beneath", "behind", "within", "beyond", "underneath", "in front of", "next to", "off of"
     ],
     "conjunction": [
         "and", "or", "but", "nor", "so", "yet", "for", "although", "because", "since",
         "unless", "until", "while", "whereas", "after", "before", "once", "though", "even though", "provided that",
         "as", "as if", "as long as", "as soon as", "as though", "in case", "in order that", "lest", "now that", "so that",
         "than", "that", "though", "till", "when", "whenever", "where", "wherever", "whether", "while",
-        "both", "either", "neither", "not only", "but also", "rather than", "as well as", "such as", "just as", "even if"
+        "both", "either", "neither", "not only", "but also", "rather than", "as well as", "such as", "just as", "even if",
+        "so long as", "provided", "insofar as", "considering that", "inasmuch as", "given that", "in the event that", "whereupon", "inasmuch as"
     ],
     "pronoun": [
         "he", "she", "it", "they", "we", "you", "me", "him", "her", "them",
         "us", "I", "my", "mine", "your", "yours", "his", "hers", "its", "their",
         "theirs", "our", "ours", "myself", "yourself", "himself", "herself", "itself", "ourselves", "yourselves",
         "themselves", "this", "that", "these", "those", "anyone", "everyone", "someone", "nobody", "somebody",
-        "anybody", "everything", "nothing", "something", "anything", "each", "either", "neither", "one", "none"
+        "anybody", "everything", "nothing", "something", "anything", "each", "either", "neither", "one", "none",
+        "another", "both", "each other", "one another", "whose", "whom", "whosever", "who", "whom", "whosever"
     ],
     "interjection": [
         "wow", "ouch", "hey", "oh", "oops", "ah", "aha", "alas", "bravo", "bingo",
         "cheers", "congrats", "dang", "darn", "eek", "eh", "gee", "gosh", "ha", "haha",
         "hmm", "huh", "jeez", "no", "oh dear", "oops", "ouch", "phew", "shh", "uh-oh",
         "whew", "whoa", "yay", "yikes", "yippee", "yoo-hoo", "yuck", "zoinks", "holy", "goodness",
-        "well", "indeed", "mercy", "boy", "rats", "blimey", "drat", "eureka", "fiddlesticks", "golly"
+        "well", "indeed", "mercy", "boy", "rats", "blimey", "drat", "eureka", "fiddlesticks", "golly",
+        "whoops", "wowza", "golly", "yahoo", "hooray", "good grief", "gosh", "goodness gracious", "whoa there", "yep"
+    ],
+    "names": [
+        "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Hannah", "Ian", "Jack",
+        "Katherine", "Liam", "Mia", "Noah", "Olivia", "Paul", "Quinn", "Rachel", "Sam", "Tina",
+        "Ursula", "Victor", "Wendy", "Xander", "Yara", "Zach", "Aiden", "Bella", "Caleb", "Daisy", "Ethan",
+        "Fiona", "George", "Holly", "Isaac", "Jasmine", "Kara", "Lucas", "Mason", "Nora", "Owen",
+        "Peyton", "Quinn", "Riley", "Sophie", "Travis", "Ulysses", "Vivian", "Wyatt", "Xena", "Yvonne", "Zane"
     ]
 }
