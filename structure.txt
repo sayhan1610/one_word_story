@@ -1,0 +1,14 @@
+one-word-story/
+│
+├── index.html
+├── style.css
+├── script.js
+├── words/
+│   ├── adjectives.json
+│   ├── adverbs.json
+│   ├── conjunctions.json
+│   ├── interjections.json
+│   ├── nouns.json
+│   ├── prepositions.json
+│   ├── pronouns.json
+│   └── verbs.json
