@@ -24,12 +24,20 @@ body {
 /* Container Styling */
 .container {
   text-align: center;
-  background: #ffffff;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   transform: scale(1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-image: repeating-linear-gradient(
+    0deg,
+    black,
+    1px,
+    white 1px,
+    white
+  );
+  background-size: 100% 30px;
+  background-color: white;
 }
 
 .container:hover {
@@ -100,4 +108,30 @@ button:hover {
 button:active {
   background: #ff6f61;
   transform: translateY(1px);
+}
+
+.background {
+  --size: 80px; /* control the size */
+  --color: #add8e6;
+
+  background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      #add8e6 41%,
+      #add8e6 60%,
+      transparent 61%,
+      transparent 100%
+    ),
+    linear-gradient(
+      45deg,
+      #add8e6 25%,
+      transparent 25%,
+      transparent 50%,
+      #add8e6 50%,
+      #add8e6 75%,
+      transparent 75%,
+      transparent
+    );
+  background-size: var(--size) var(--size);
 }

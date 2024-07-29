@@ -3,12 +3,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submitBtn');
     const storyDiv = document.getElementById('story');
 
+    // Log to check if elements are correctly selected
+    console.log(userInput, submitBtn, storyDiv); // This should not log `null`
+
+    if (!userInput || !submitBtn || !storyDiv) {
+        console.error('One or more elements are not found in the DOM.');
+        return;
+    }
+
     let story = "";
     let lastPartOfSpeech = null;
 
     submitBtn.addEventListener('click', addUserWord);
 
     function addUserWord() {
+        console.log('Button clicked'); // Log to check if function is called
+
         const word = userInput.value.trim();
         if (word) {
             const punctuation = getPunctuation(word);
