@@ -64,6 +64,7 @@ h1:hover {
   color: #666;
   min-height: 40px;
   transition: color 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 #story:hover {
@@ -84,7 +85,8 @@ button {
 /* Input Styling */
 input {
   background: #f9f9f9;
-  color: #333;
+  border: 1px solid grey;
+  outline: none;
 }
 
 input:focus {
@@ -110,28 +112,192 @@ button:active {
   transform: translateY(1px);
 }
 
-.background {
-  --size: 80px; /* control the size */
-  --color: #add8e6;
+@keyframes cycleColors {
+  0% {
+    --color1: rgba(0, 123, 255, 0.6); /* Blue */
+    --color2: rgba(255, 255, 255, 0.6); /* White */
+    --color3: rgba(255, 165, 0, 0.6); /* Orange */
+    --color4: rgba(0, 255, 255, 0.6); /* Cyan */
+    --color5: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
+    --color6: rgba(255, 140, 0, 0.6); /* Dark Orange */
+  }
+  20% {
+    --color1: rgba(255, 0, 0, 0.6); /* Red */
+    --color2: rgba(0, 255, 0, 0.6); /* Green */
+    --color3: rgba(0, 0, 255, 0.6); /* Blue */
+    --color4: rgba(255, 255, 0, 0.6); /* Yellow */
+    --color5: rgba(0, 255, 255, 0.6); /* Cyan */
+    --color6: rgba(255, 0, 255, 0.6); /* Magenta */
+  }
+  40% {
+    --color1: rgba(255, 255, 0, 0.6); /* Yellow */
+    --color2: rgba(0, 0, 255, 0.6); /* Blue */
+    --color3: rgba(255, 0, 255, 0.6); /* Magenta */
+    --color4: rgba(0, 255, 0, 0.6); /* Green */
+    --color5: rgba(255, 165, 0, 0.6); /* Orange */
+    --color6: rgba(0, 123, 255, 0.6); /* Blue */
+  }
+  60% {
+    --color1: rgba(0, 255, 0, 0.6); /* Green */
+    --color2: rgba(255, 0, 0, 0.6); /* Red */
+    --color3: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
+    --color4: rgba(255, 255, 255, 0.6); /* White */
+    --color5: rgba(255, 140, 0, 0.6); /* Dark Orange */
+    --color6: rgba(0, 255, 255, 0.6); /* Cyan */
+  }
+  80% {
+    --color1: rgba(0, 0, 255, 0.6); /* Blue */
+    --color2: rgba(255, 165, 0, 0.6); /* Orange */
+    --color3: rgba(255, 255, 0, 0.6); /* Yellow */
+    --color4: rgba(0, 255, 0, 0.6); /* Green */
+    --color5: rgba(0, 123, 255, 0.6); /* Blue */
+    --color6: rgba(255, 255, 255, 0.6); /* White */
+  }
+  100% {
+    --color1: rgba(0, 123, 255, 0.6); /* Blue */
+    --color2: rgba(255, 255, 255, 0.6); /* White */
+    --color3: rgba(255, 165, 0, 0.6); /* Orange */
+    --color4: rgba(0, 255, 255, 0.6); /* Cyan */
+    --color5: rgba(0, 191, 255, 0.6); /* Deep Sky Blue */
+    --color6: rgba(255, 140, 0, 0.6); /* Dark Orange */
+  }
+}
 
-  background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      transparent 40%,
-      #add8e6 41%,
-      #add8e6 60%,
-      transparent 61%,
-      transparent 100%
+@keyframes colorChange {
+  0% {
+    --color1: rgba(0, 123, 255, 0.6);
+    --color2: rgba(255, 255, 255, 0.6);
+    --color3: rgba(255, 165, 0, 0.6);
+    --color4: rgba(0, 255, 255, 0.6);
+    --color5: rgba(0, 191, 255, 0.6);
+    --color6: rgba(255, 140, 0, 0.6);
+  }
+  25% {
+    --color1: rgba(255, 99, 71, 0.6);
+    --color2: rgba(50, 205, 50, 0.6);
+    --color3: rgba(147, 112, 219, 0.6);
+    --color4: rgba(255, 20, 147, 0.6);
+    --color5: rgba(30, 144, 255, 0.6);
+    --color6: rgba(255, 69, 0, 0.6);
+  }
+  50% {
+    --color1: rgba(255, 182, 193, 0.6);
+    --color2: rgba(70, 130, 180, 0.6);
+    --color3: rgba(240, 230, 140, 0.6);
+    --color4: rgba(152, 251, 152, 0.6);
+    --color5: rgba(123, 104, 238, 0.6);
+    --color6: rgba(255, 160, 122, 0.6);
+  }
+  75% {
+    --color1: rgba(135, 206, 235, 0.6);
+    --color2: rgba(240, 128, 128, 0.6);
+    --color3: rgba(255, 222, 173, 0.6);
+    --color4: rgba(144, 238, 144, 0.6);
+    --color5: rgba(218, 112, 214, 0.6);
+    --color6: rgba(250, 128, 114, 0.6);
+  }
+  100% {
+    --color1: rgba(0, 123, 255, 0.6);
+    --color2: rgba(255, 255, 255, 0.6);
+    --color3: rgba(255, 165, 0, 0.6);
+    --color4: rgba(0, 255, 255, 0.6);
+    --color5: rgba(0, 191, 255, 0.6);
+    --color6: rgba(255, 140, 0, 0.6);
+  }
+}
+
+.background {
+  --color1: rgba(0, 123, 255, 0.6);
+  --color2: rgba(255, 255, 255, 0.6);
+  --color3: rgba(255, 165, 0, 0.6);
+  --color4: rgba(0, 255, 255, 0.6);
+  --color5: rgba(0, 191, 255, 0.6);
+  --color6: rgba(255, 140, 0, 0.6);
+
+  background-image: linear-gradient(
+      45deg,
+      var(--color2) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--color2) 75%,
+      var(--color2)
     ),
     linear-gradient(
-      45deg,
-      #add8e6 25%,
-      transparent 25%,
-      transparent 50%,
-      #add8e6 50%,
-      #add8e6 75%,
-      transparent 75%,
-      transparent
+      135deg,
+      var(--color2) 25%,
+      var(--color1) 25%,
+      var(--color1) 75%,
+      var(--color2) 75%,
+      var(--color2)
+    ),
+    linear-gradient(
+      225deg,
+      var(--color3) 25%,
+      var(--color4) 25%,
+      var(--color4) 75%,
+      var(--color3) 75%,
+      var(--color3)
+    ),
+    linear-gradient(
+      315deg,
+      var(--color5) 25%,
+      var(--color6) 25%,
+      var(--color6) 75%,
+      var(--color5) 75%,
+      var(--color5)
     );
-  background-size: var(--size) var(--size);
+  background-size: 90px 90px;
+  background-position: 0 0, 135px 135px, -135px -135px, 0 0;
+  animation: colorChange 10s infinite alternate;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #333 transparent;
+}
+
+.tooltip .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5e57;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
 }

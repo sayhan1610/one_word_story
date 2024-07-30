@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     submitBtn.addEventListener('click', addUserWord);
 
+    storyDiv.addEventListener('click', function() {
+        const textToCopy = storyDiv.textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            console.log('Text copied to clipboard');
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
+        });
+    });
+
     function addUserWord() {
         console.log('Button clicked'); // Log to check if function is called
 
@@ -25,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const cleanWord = word.replace(/[.,!?;:]$/, '');
 
             story += ` ${cleanWord}${punctuation ? punctuation : ' '}`;
+            story = formatStory(story); // Ensure proper formatting
             updateStory();
             lastPartOfSpeech = determinePartOfSpeech(cleanWord);
             fetchNextWord();
@@ -34,6 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateStory() {
         storyDiv.textContent = story.trim();
+    }
+
+    function formatStory(text) {
+        return text.replace(/([.!?])([a-zA-Z])/g, '$1 $2')  // Add space after punctuation if missing
+                   .replace(/(?:^|\.\s*)([a-z])/g, (match, p1) => match.replace(p1, p1.toUpperCase())); // Capitalize after full stop
     }
 
     function determinePartOfSpeech(word) {
@@ -87,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nextWord = words[Math.floor(Math.random() * words.length)];
                 const wordToAdd = nextPartOfSpeech === 'noun' ? pluralize(nextWord) : nextWord;
                 story += ` ${capitalizeIfNeeded(wordToAdd)} `;
+                story = formatStory(story); // Ensure proper formatting
                 updateStory();
                 lastPartOfSpeech = nextPartOfSpeech;
             })
