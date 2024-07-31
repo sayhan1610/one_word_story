@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const userInput = document.getElementById('userInput');
     const submitBtn = document.getElementById('submitBtn');
     const storyDiv = document.getElementById('story');
+    const loopAudio = document.getElementById('loopAudio');
+    const audioFiles = ['/audio/pop1.mp3', '/audio/pop2.mp3', '/audio/pop3.mp3'];
 
     // Log to check if elements are correctly selected
-    console.log(userInput, submitBtn, storyDiv); // This should not log `null`
+    console.log(userInput, submitBtn, storyDiv, loopAudio); // This should not log `null`
 
-    if (!userInput || !submitBtn || !storyDiv) {
+    if (!userInput || !submitBtn || !storyDiv || !loopAudio) {
         console.error('One or more elements are not found in the DOM.');
         return;
     }
@@ -15,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let lastPartOfSpeech = null;
 
     submitBtn.addEventListener('click', addUserWord);
+    document.addEventListener('click', playLoopAudio);
 
     storyDiv.addEventListener('click', function() {
         const textToCopy = storyDiv.textContent;
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const word = userInput.value.trim();
         if (word) {
+            playRandomAudio();
             const punctuation = getPunctuation(word);
             const cleanWord = word.replace(/[.,!?;:]$/, '');
 
@@ -176,5 +180,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function isAdjective(word) {
         const commonAdjectiveEndings = ['y', 'able', 'ible', 'al', 'ful', 'ic', 'ive', 'less', 'ous'];
         return commonAdjectiveEndings.some(ending => word.endsWith(ending));
+    }
+
+    function playRandomAudio() {
+        const randomIndex = Math.floor(Math.random() * audioFiles.length);
+        const audio = new Audio(audioFiles[randomIndex]);
+        audio.play();
+    }
+
+    function playLoopAudio() {
+        if (loopAudio.paused) {
+            loopAudio.play();
+        }
     }
 });
